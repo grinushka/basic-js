@@ -21,9 +21,9 @@ function getSeason(date) {
   }
 
   //check the methods the date has TRICKY MOMENTS
-  if () {
-    throw new Error('Invalid date!');
-  }
+  // if (!date) {
+  //   throw new Error('Invalid date!');
+  // }
 
   let month = date.getMonth();
 
