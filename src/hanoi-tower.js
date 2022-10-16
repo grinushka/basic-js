@@ -14,16 +14,26 @@ const { NotImplementedError } = require('../extensions/index.js');
  * calculateHanoi(9, 4308) => { turns: 511, seconds: 427 }
  *
  */
-function calculateHanoi(/* disksNumber, turnsSpeed */) {
-  if (n == 0)
-        {
-            return;
-        }
-        towerOfHanoi(n - 1, from_rod, aux_rod, to_rod);
-        document.write("Move disk " + n + " from rod " + from_rod +
-        " to rod " + to_rod+"<br/>");
-        towerOfHanoi(n - 1, aux_rod, to_rod, from_rod);
-}
+
+
+function calculateHanoi(disksNumber, turnsSpeed, src = 'A', dst = 'C', aux = 'B') {
+
+  let hanoi = {
+    turns: 0, 
+    seconds: 0
+  }
+
+  let turns = Math.pow(2, disksNumber) - 1;
+  let speedPerSeconds = turnsSpeed / 60 / 60;
+  let seconds = Math.floor(turns/speedPerSeconds);
+
+  hanoi.turns = turns; 
+  hanoi.seconds = seconds;
+
+  return hanoi
+
+};
+
 
 module.exports = {
   calculateHanoi

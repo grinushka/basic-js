@@ -20,8 +20,8 @@ function getSeason(date) {
     throw new Error('Invalid date!');
   }
 
-  //check the methods the date has
-  if (date.hasOwnProperty('getTime')) {
+  //check the methods the date has TRICKY MOMENTS
+  if () {
     throw new Error('Invalid date!');
   }
 

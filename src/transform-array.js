@@ -21,13 +21,13 @@ function transform(arr) {
   let arrDuplicate = arr;
 
   for(let i = 0; i < arrDuplicate.length; i++) {
-    if (arrDuplicate[i] === '--discard-next') {
+    if (arr[i] === '--discard-next') {
       if(arrDuplicate[i+1]) {
         arrDuplicate.splice(i, 2);
         i--;
         // console.log(arrDuplicate)
       } else {arrDuplicate.splice(i, 1)}
-    } else if (arrDuplicate[i] === '--discard-prev') {
+    } else if (arr[i] === '--discard-prev') {
       if (arrDuplicate[i-1]) {
         arrDuplicate.splice(i-1, 2);
         i = i - 2 ;
@@ -36,13 +36,13 @@ function transform(arr) {
         arrDuplicate.splice(i, 1);
         i--
       }
-    } else if (arrDuplicate[i] === '--double-next') {
+    } else if (arr[i] === '--double-next') {
       if (arrDuplicate[i+1]) {
         arrDuplicate.splice(i, 1, arrDuplicate[i+1])
         // console.log(arrDuplicate)
       } else {arrDuplicate.splice(i, 1);}
            
-    } else if (arrDuplicate[i] === '--double-prev') {
+    } else if (arr[i] === '--double-prev') {
       if (arrDuplicate[i-1]) {
         arrDuplicate.splice(i, 1, arrDuplicate[i-1])
       } else {
@@ -61,3 +61,38 @@ function transform(arr) {
 module.exports = {
   transform
 };
+
+
+
+// for(let i = 0; i < arrDuplicate.length; i++) {
+//   if (arrDuplicate[i] === '--discard-next') {
+//     if(arrDuplicate[i+1]) {
+//       arrDuplicate.splice(i, 2);
+//       i--;
+//       // console.log(arrDuplicate)
+//     } else {arrDuplicate.splice(i, 1)}
+//   } else if (arrDuplicate[i] === '--discard-prev') {
+//     if (arrDuplicate[i-1]) {
+//       arrDuplicate.splice(i-1, 2);
+//       i = i - 2 ;
+//       // console.log(arrDuplicate)
+//     } else {
+//       arrDuplicate.splice(i, 1);
+//       i--
+//     }
+//   } else if (arrDuplicate[i] === '--double-next') {
+//     if (arrDuplicate[i+1]) {
+//       arrDuplicate.splice(i, 1, arrDuplicate[i+1])
+//       // console.log(arrDuplicate)
+//     } else {arrDuplicate.splice(i, 1);}
+         
+//   } else if (arrDuplicate[i] === '--double-prev') {
+//     if (arrDuplicate[i-1]) {
+//       arrDuplicate.splice(i, 1, arrDuplicate[i-1])
+//     } else {
+//       arrDuplicate.splice(i, 1); 
+//       i--}
+    
+//       // console.log(arrDuplicate)
+//   }
+// };
