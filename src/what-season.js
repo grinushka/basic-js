@@ -12,18 +12,15 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function getSeason(date) {
+  
   if (date === 'undefined' || arguments.length === 0) {
     return 'Unable to determine the time of year!'
   }
 
-  if (!(Object.prototype.toString.call(date) === "[object Date]") || isNaN(date)) {
-    throw new Error('Invalid date!');
+  // TRICKY MOMENTS
+  if (Object.getOwnPropertyNames(date).length || !(date instanceof Date)) {
+    throw new Error("Invalid date!");
   }
-
-  //check the methods the date has TRICKY MOMENTS
-  // if (!date) {
-  //   throw new Error('Invalid date!');
-  // }
 
   let month = date.getMonth();
 
